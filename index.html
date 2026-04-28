@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nova OS</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div id="boot-screen" class="boot-screen">
+      <div class="boot-panel">
+        <div class="boot-logo">Nova OS</div>
+        <div class="boot-subtitle">Initialisation du systeme</div>
+        <div class="boot-progress">
+          <div id="boot-bar" class="boot-bar"></div>
+        </div>
+        <div id="boot-status" class="boot-status">Chargement du noyau...</div>
+      </div>
+    </div>
+
+    <div id="login-screen" class="boot-screen hidden">
+      <div class="boot-panel session-panel">
+        <div class="boot-logo">Nova OS</div>
+        <div class="boot-subtitle">Choisissez un profil</div>
+        <div id="session-list" class="session-list"></div>
+        <form id="session-form" class="session-form">
+          <input id="session-name" class="terminal-input" type="text" placeholder="Nouveau profil" autocomplete="off" />
+          <button class="terminal-run" type="submit">Creer</button>
+        </form>
+      </div>
+    </div>
+
+    <div id="os" class="os hidden">
+      <header class="topbar">
+        <div class="brand">Nova OS</div>
+        <div id="clock" class="clock"></div>
+      </header>
+
+      <main class="desktop">
+        <section id="desktop-icons" class="desktop-icons"></section>
+
+        <section id="windows-layer" class="windows-layer"></section>
+      </main>
+
+      <footer id="dock" class="dock"></footer>
+    </div>
+
+    <template id="window-template">
+      <section class="window">
+        <div class="window-header">
+          <span class="window-title"></span>
+          <div class="window-actions">
+            <button class="window-action" data-action="minimize" aria-label="Minimiser">_</button>
+            <button class="window-action" data-action="close" aria-label="Fermer">x</button>
+          </div>
+        </div>
+        <div class="window-body"></div>
+      </section>
+    </template>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
